@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/hospitallinfo.css" media="all">
+</head>
+<body>
+
+<ul class="item">
+    <li class="item-li item-li-1 item-li-background-1" id="list1">
+        <div class="main">
+            <div class="main-num">999</div>
+            <div><img src="../../img/icon/ren.png" href="javascript:;"/></div>
+            <div>待完善</div>
+        </div>
+    </li>
+    <li class="item-li item-li-2 item-li-background-2" id="list2">
+        <div class="main">
+            <div class="main-num">999</div>
+            <div><img src="../../img/icon/ren.png" href="javascript:;"/></div>
+            <div>已完善</div>
+        </div>
+    </li>
+    <li class="item-li item-li-3 item-li-background-3" id="list3">
+        <div class="main">
+            <div class="main-num">999</div>
+            <div><img src="../../img/icon/ren.png" href="javascript:;"/></div>
+            <div>待制作</div>
+        </div>
+    </li>
+    <li class="item-li item-li-4 item-li-background-4" id="list4">
+        <div class="main">
+            <div class="main-num">999</div>
+            <div><img src="../../img/icon/ren.png" href="javascript:;"/></div>
+            <div>制作中</div>
+        </div>
+    </li>
+    <li class="item-li item-li-5 item-li-background-5" id="list5">
+        <div class="main">
+            <div class="main-num">999</div>
+            <div><img src="../../img/icon/ren.png" href="javascript:;"/></div>
+            <div>待审核</div>
+        </div>
+    </li>
+    <li class="item-li item-li-6 item-li-background-6" id="list6">
+        <div class="main">
+            <div class="main-num">999</div>
+            <div><img src="../../img/icon/ren.png" href="javascript:;"/></div>
+            <div>已发布</div>
+        </div>
+    </li>
+</ul>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <!--<legend>产妇信息</legend>-->
+</fieldset>
+<div class="demoTable">
+    搜索：
+    <div class="layui-inline">
+        <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+    </div>
+    <button class="layui-btn" data-type="reload">搜索</button>
+</div>
+<table class="layui-hide" id="test" lay-filter="test"></table>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">重置密码</a>
+</script>
+
+<script type="text/html" id="checkboxTpl">
+    <!-- 这里的 checked 的状态只是演示 -->
+    <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="启用|停止" lay-filter="lockDemo" {{
+           d.status==1?"checked":"" }}>
+</script>
+
+<script type="text/html" id="barDemo2">
+    {{# if(d.index==1){}}
+    <a class="layui-btn layui-btn-xs"  style="background-color: rgb(182,179,179)">待完善</a>
+    {{# }else if(d.index==2){}}
+    <a class="layui-btn layui-btn-xs"   >已完善</a>
+    {{# }else if(d.index==3){}}
+    <a class="layui-btn layui-btn-xs"  style="background-color:rgb(255,187,72)">待制作</a>
+    {{# }else if(d.index==4){}}
+    <a class="layui-btn layui-btn-xs"  style="background-color: #2255A4" >制作中</a>
+    {{# }else if(d.index==5){}}
+    <a class="layui-btn layui-btn-xs" style="background-color: #27A9E3" >待审核</a>
+    {{# }else if(d.index==6){}}
+    <a class="layui-btn layui-btn-xs"   style="background-color: #28B779">已发布</a>
+    {{# }}}
+</script>
+
+<script type="text/html" id="barDemo3">
+    {{# if(d.index==1){}}
+    <a class="layui-btn layui-btn-xs" lay-event="submit" >提交</a>
+    {{# }else if(d.index==2){}}
+    <a class="layui-btn layui-btn-xs" lay-event="submit" >提交</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="remove">移除</a>
+    {{# }else if(d.index==3){}}
+    <a class="layui-btn layui-btn-xs" lay-event="submit" >下载</a>
+    <!--<a class="layui-btn layui-btn-xs" lay-event="submit" >提交</a>-->
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="remove">移除</a>
+    {{# }else if(d.index==4){}}
+    <a class="layui-btn layui-btn-xs" lay-event="" ></a>
+
+    {{# }else if(d.index==5){}}
+    <a class="layui-btn layui-btn-danger layui-btn-xs" style="background-color: #00b7ee" lay-event="play">播放</a>
+    <a class="layui-btn layui-btn-xs" lay-event="submit" >提交</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="remove">移除</a>
+    {{# }else if(d.index==6){}}
+    <a class="layui-btn layui-btn-danger layui-btn-xs" style="background-color: #00b7ee" lay-event="play">播放</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="remove">移除</a>
+    {{# }}}
+</script>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a class="layui-btn layui-btn-sm" lay-event="getCheckData" href="javascript:;">新增档案</a>
+    </div>
+</script>
+
+<script src="../../lib/dialog/jquery-1.8.2.min.js"></script>
+<script src="../../js/dialog.js" type="application/javascript"></script>
+<script src="../../js/common.js" type="application/javascript"></script>
+<script src="../../layui/layui.js" charset="utf-8"></script>
+<script src="../../js/pregnant.js"></script>
+
+</body>
+</html>

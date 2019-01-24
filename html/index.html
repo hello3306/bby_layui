@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>admin</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!--头部-->
+    <div class="layui-header">
+        <div class="layui-logo">宝宝云档案</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <!--<img src="http://t.cn/RCzsdCq" class="layui-nav-img">-->
+                    管理员
+                </a>
+                <!--<dl class="layui-nav-child">-->
+                    <!--<dd><a href="">基本资料</a></dd>-->
+                    <!--<dd><a href="">安全设置</a></dd>-->
+                <!--</dl>-->
+            </li>
+            <li class="layui-nav-item" id="SignOut"><a href="javascript:;">退出登录</a></li>
+        </ul>
+    </div>
+    <!--左侧导航-->
+    <div class="layui-side layui-bg-green" id="lefItem">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="demo">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;" data-id="1" data-url="hospital/hospital.html" data-text="医院管理">医院管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" data-id="2" data-url="" data-text="设备管理">设备管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" data-id="3" data-url="" data-text="统计分析">统计分析</a>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;">平台管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="6" data-url="agent/agent.html" data-text="代理商管理" >代理商管理</a></dd>
+                        <dd><a href="javascript:;" data-id="7" data-url="" data-text="医院管理" >医院管理</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item"  v-if="hidden">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="8" data-url="" data-text="代理商用户" >代理商用户</a></dd>
+                        <dd><a href="javascript:;" data-id="9" data-url="" data-text="系统用户" >系统用户</a></dd>
+                        <dd><a href="javascript:;" data-id="10" data-url="" data-text="医院用户" >医院用户</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;">消息管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="11" data-url="" data-text="系统消息" >系统消息</a></dd>
+                        <dd><a href="javascript:;" data-id="12" data-url="" data-text="建议反馈" >建议反馈</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item" hidden="hidden">
+                    <a href="javascript:;">孕期宣传</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="15" data-url="knowledge/Encyclopedias.html" data-text="百科知识" >百科知识</a></dd>
+                        <dd><a href="javascript:;" data-id="16" data-url="video/video.html" data-text="孕妈课堂">孕妈课堂</a></dd>
+                        <dd><a href="javascript:;" data-id="18" data-url="music/music.html" data-text="宝宝音乐">宝宝音乐</a></dd>
+                        <dd><a href="javascript:;" data-id="19" data-url="story/story.html" data-text="宝宝故事">宝宝故事</a></dd>
+                        <dd><a href="javascript:;" data-id="20" data-url="" data-text="能不能吃">能不能吃</a></dd>
+                        <dd><a href="javascript:;" data-id="21" data-url="week/week.html" data-text="孕周知识">孕周知识</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;">商城管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="13" data-url="product/product.html" data-text="商品管理" >商品管理</a></dd>
+                        <dd><a href="javascript:;" data-id="24" data-url="" data-text="分类添加">分类添加</a></dd>
+                        <dd><a href="javascript:;" data-id="14" data-url="" data-text="订单管理">订单管理</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;" data-id="22" data-url="quanzi/quanzi.html" data-text="圈子管理">圈子管理</a>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;" data-id="23" data-url="xieyi/xieyi.html" data-text="用户协议">用户协议</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" data-id="17" data-url="Timeline/Timeline.html" data-text="版本更新">版本更新</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--内容区域-->
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="main-layout-body">
+            <!--tab 切换-->
+            <div class="layui-tab layui-tab-brief main-layout-tab" lay-filter="tab" lay-allowClose="true">
+                <ul class="layui-tab-title">
+                    <li class="layui-this ">后台主页</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show" style="background: #f5f5f5;">
+                        <!--1-->
+                        <iframe src="welcome.html" width="100%" height="100%" name="iframe" scrolling="auto"
+                                class="iframe" framborder="0" ></iframe>
+                        <!--1end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部信息-->
+    <!--<div class="layui-footer">-->
+        <!--&lt;!&ndash; 底部固定区域 &ndash;&gt;-->
+        <!--© ljxcx.com - 贵州制作-->
+    <!--</div>-->
+</div>
+
+<script src="../layui/layui.js"></script>
+<script src="../lib/vue/vue.js"></script>
+<script src="../lib/dialog/jquery-1.8.2.min.js" ></script>
+<script src="../js/dialog.js" type="application/javascript"></script>
+<script src="../js/common.js" type="application/javascript"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

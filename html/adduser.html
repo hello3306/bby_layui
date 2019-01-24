@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加用户</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>产妇信息</legend>
+</fieldset>
+
+<form class="layui-form" action="" lay-filter="example">
+    <div class="layui-form-item">
+        <label class="layui-form-label">产妇姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入姓名"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" name="mobile" placeholder="请输入电话" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">预产期</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="date" placeholder="yyyy-MM-dd">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+        </div>
+    </div>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>家属信息</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label class="layui-form-label">家属姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="familyname" lay-verify="title" autocomplete="off" placeholder="请输入姓名"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" name="mobile" placeholder="请输入电话" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="address" placeholder="请输入地址" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">家人寄语</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>宝宝信息</legend>
+    </fieldset>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">宝宝1</li>
+            <li>宝宝2</li>
+        </ul>
+        <!--宝宝1-->
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <!--流水号1-->
+                <div class="layui-form-item">
+
+                    <label class="layui-form-label">流水号1</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="familyname" lay-verify="title" autocomplete="off" placeholder="请输入流水号"
+                               class="layui-input">
+                    </div>
+                </div>
+                <!--流水号2-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">流水号2</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="familyname" lay-verify="title" autocomplete="off" placeholder="请输入流水号"
+                               class="layui-input">
+                    </div>
+                </div>
+                <!--宝宝姓名-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">宝宝姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="mobile" placeholder="请输入宝宝姓名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <!--昵称-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">昵称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="address" placeholder="请输入宝宝昵称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <!--日期-->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">出生日期</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="test4" placeholder="HH:mm:ss">
+                    </div>
+                </div>
+                <!--性别-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">宝宝性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex" value="男" title="男" checked="">
+                        <input type="radio" name="sex" value="女" title="女">
+                        <input type="radio" name="sex" value="未知" title="未知">
+                    </div>
+                </div>
+                <!--血型-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">宝宝血型</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="blood" value="A" title="A" checked="">
+                        <input type="radio" name="blood" value="B" title="B">
+                        <input type="radio" name="blood" value="AB" title="AB">
+                        <input type="radio" name="blood" value="O" title="O">
+                        <input type="radio" name="blood" value="未知" title="未知">
+
+                    </div>
+                </div>
+                <!--身高体重-->
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">身高</label>
+                        <div class="layui-input-inline">
+                            <input type="tel" name="phone" lay-verify="required" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">体重</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="email" lay-verify="required" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--宝宝2-->
+            <div class="layui-tab-item">
+                <!--流水号1-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">流水号1</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="familyname" lay-verify="title" autocomplete="off" placeholder="请输入流水号"
+                               class="layui-input">
+                    </div>
+                </div>
+                <!--流水号2-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">流水号2</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="familyname" lay-verify="title" autocomplete="off" placeholder="请输入流水号"
+                               class="layui-input">
+                    </div>
+                </div>
+                <!--宝宝姓名-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">宝宝姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="mobile" placeholder="请输入宝宝姓名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <!--昵称-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">昵称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="address" placeholder="请输入宝宝昵称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <!--日期-->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">出生日期</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="test5" placeholder="HH:mm:ss">
+                    </div>
+                </div>
+                <!--性别-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">宝宝性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex1" value="男" title="男" checked="">
+                        <input type="radio" name="sex1" value="女" title="女">
+                        <input type="radio" name="sex1" value="未知" title="未知">
+                    </div>
+                </div>
+                <!--血型-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">宝宝血型</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="blood1" value="A" title="A" checked="">
+                        <input type="radio" name="blood1" value="B" title="B">
+                        <input type="radio" name="blood1" value="AB" title="AB">
+                        <input type="radio" name="blood1" value="O" title="O">
+                        <input type="radio" name="blood1" value="未知" title="未知">
+
+                    </div>
+                </div>
+                <!--身高体重-->
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">身高</label>
+                        <div class="layui-input-inline">
+                            <input type="tel" name="phone" lay-verify="required" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">体重</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="email" lay-verify="required" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+        </div>
+    </div>
+</form>
+
+
+<script src="../layui/layui.js" charset="utf-8"></script>
+<script src="../js/adduser.js"></script>
+
+</body>
+</html>
